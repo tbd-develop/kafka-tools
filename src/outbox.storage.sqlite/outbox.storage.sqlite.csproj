@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>MessagingToolset.Outbox.Storage.Sqlite</AssemblyName>
+        <RootNamespace>MessagingToolset.Outbox.Storage.Sqlite</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\outbox.storage\outbox.storage.csproj" />
+      <ProjectReference Include="..\outbox\outbox.csproj" />
+    </ItemGroup>
+
+</Project>

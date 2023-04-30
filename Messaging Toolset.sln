@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outbox", "src\outbox\outbox.csproj", "{8593F728-D130-40C9-874C-2B1F447023B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outbox.storage", "src\outbox.storage\outbox.storage.csproj", "{A99D09B6-11DC-4E51-AF52-A6DB71C22020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outbox.storage.sqlite", "src\outbox.storage.sqlite\outbox.storage.sqlite.csproj", "{65F25BF4-BAD3-49A4-97E8-D837E7FF788F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "topics.providers", "src\topics.providers\topics.providers.csproj", "{A038F2D6-00A3-4E91-A2AC-0F264AA5789D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "topics.providers.consul", "src\topics.providers.consul\topics.providers.consul.csproj", "{EDF25B67-6A7D-460D-B583-F2AF501F6FBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kafka", "src\kafka\kafka.csproj", "{E72067A1-6E66-41DF-AD46-0DA93C72734C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "outbox.storage.sqlserver", "src\outbox.storage.sqlserver\outbox.storage.sqlserver.csproj", "{1C3B16B0-455C-4B4E-A485-1D3EC8A045A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8593F728-D130-40C9-874C-2B1F447023B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8593F728-D130-40C9-874C-2B1F447023B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8593F728-D130-40C9-874C-2B1F447023B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8593F728-D130-40C9-874C-2B1F447023B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99D09B6-11DC-4E51-AF52-A6DB71C22020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99D09B6-11DC-4E51-AF52-A6DB71C22020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99D09B6-11DC-4E51-AF52-A6DB71C22020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99D09B6-11DC-4E51-AF52-A6DB71C22020}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F25BF4-BAD3-49A4-97E8-D837E7FF788F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F25BF4-BAD3-49A4-97E8-D837E7FF788F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F25BF4-BAD3-49A4-97E8-D837E7FF788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F25BF4-BAD3-49A4-97E8-D837E7FF788F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A038F2D6-00A3-4E91-A2AC-0F264AA5789D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A038F2D6-00A3-4E91-A2AC-0F264AA5789D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A038F2D6-00A3-4E91-A2AC-0F264AA5789D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A038F2D6-00A3-4E91-A2AC-0F264AA5789D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF25B67-6A7D-460D-B583-F2AF501F6FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF25B67-6A7D-460D-B583-F2AF501F6FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF25B67-6A7D-460D-B583-F2AF501F6FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF25B67-6A7D-460D-B583-F2AF501F6FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72067A1-6E66-41DF-AD46-0DA93C72734C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72067A1-6E66-41DF-AD46-0DA93C72734C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72067A1-6E66-41DF-AD46-0DA93C72734C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72067A1-6E66-41DF-AD46-0DA93C72734C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3B16B0-455C-4B4E-A485-1D3EC8A045A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3B16B0-455C-4B4E-A485-1D3EC8A045A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3B16B0-455C-4B4E-A485-1D3EC8A045A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3B16B0-455C-4B4E-A485-1D3EC8A045A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
