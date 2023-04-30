@@ -6,6 +6,14 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MessagingToolset.Topics.Providers.Consul</AssemblyName>
         <RootNamespace>MessagingToolset.Topics.Providers.Consul</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Messaging Toolset - Topic Providers Consul</Title>
+        <Authors>Terry Burns-Dyson</Authors>
+        <Description>Provides Consul backed implementation of IKafkaTopicProvider </Description>
+        <PackageProjectUrl>https://github.com/tbd-develop/messaging-toolset</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>

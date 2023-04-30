@@ -6,6 +6,14 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MessagingToolset.Topics.Providers</AssemblyName>
         <RootNamespace>MessagingToolset.Topics.Providers</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Messaging Toolset - Topic Providers</Title>
+        <Authors>Terry Burns-Dyson</Authors>
+        <Description>Basic interfaces for providing configurable topic names from keys</Description>
+        <PackageProjectUrl>https://github.com/tbd-develop/messaging-toolset</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
 </Project>

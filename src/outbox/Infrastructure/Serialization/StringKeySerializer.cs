@@ -3,7 +3,7 @@ using Confluent.Kafka;
 
 namespace MessagingToolset.Outbox.Infrastructure.Serialization;
 
-public class StringSerializer : ISerializer<string>
+public class StringKeySerializer : ISerializer<string>
 {
     public byte[] Serialize(string data, SerializationContext context)
     {

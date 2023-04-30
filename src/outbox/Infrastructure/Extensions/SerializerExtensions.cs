@@ -10,7 +10,7 @@ public static class SerializerExtensions
         return type switch {
             not null when type == typeof(Guid) => new GuidKeySerializer() as ISerializer<TKey>,
             not null when type == typeof(int) => new IntSerializer() as ISerializer<TKey>,
-            not null when type == typeof(string) => new StringSerializer() as ISerializer<TKey>,
+            not null when type == typeof(string) => new StringKeySerializer() as ISerializer<TKey>,
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
     }

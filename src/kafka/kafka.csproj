@@ -6,6 +6,14 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MessagingToolset.Kafka</AssemblyName>
         <RootNamespace>MessagingToolset.Kafka</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Messaging Toolset - Kafka</Title>
+        <Authors>Terry Burns-Dyson</Authors>
+        <Description>Provide simple configuration object for storing consumer and producer configurations </Description>
+        <PackageProjectUrl>https://github.com/tbd-develop/messaging-toolset</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>

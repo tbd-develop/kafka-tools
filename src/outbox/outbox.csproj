@@ -6,6 +6,14 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MessagingToolset.Outbox</AssemblyName>
         <RootNamespace>MessagingToolset.Outbox</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Messaging Toolset - Outbox</Title>
+        <Authors>Terry Burns-Dyson</Authors>
+        <Description>Provide outbox implementation and service for queueing / dequeuing messages and publishing to kafka Topics</Description>
+        <PackageProjectUrl>https://github.com/tbd-develop/messaging-toolset</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
     <ItemGroup>

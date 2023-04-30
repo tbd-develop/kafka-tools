@@ -6,6 +6,14 @@
         <Nullable>enable</Nullable>
         <AssemblyName>MessagingToolset.Outbox.Storage</AssemblyName>
         <RootNamespace>MessagingToolset.Outbox.Storage</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Messaging Toolset - Outbox Storage</Title>
+        <Authors>Terry Burns-Dyson</Authors>
+        <Description>Basic interfaces for defining storage in which to store / retrieve outbox messages      </Description>
+        <PackageProjectUrl>https://github.com/tbd-develop/messaging-toolset</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
 
 </Project>
