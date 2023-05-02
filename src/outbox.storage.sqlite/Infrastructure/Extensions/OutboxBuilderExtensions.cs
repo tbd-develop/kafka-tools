@@ -4,9 +4,9 @@ namespace MessagingToolset.Outbox.Storage.Sqlite.Infrastructure.Extensions;
 
 public static class OutboxConfigurationBuilderExtensions
 {
-    public static OutboxBuilder UseSqlite(this OutboxBuilder builder)
+    public static OutboxBuilder UseSqlite(this OutboxBuilder builder, string connectionString)
     {
-        builder.SetStorage<SqliteStorage>();
+        builder.SetStorage((_) => new SqliteStorage(connectionString));
 
         return builder;
     }

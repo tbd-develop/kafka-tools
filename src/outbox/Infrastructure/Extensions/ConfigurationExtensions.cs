@@ -7,12 +7,12 @@ public static class ConfigurationExtensions
     public static IServiceCollection AddKafkaOutbox(this IServiceCollection serviceCollection,
         Action<OutboxBuilder> configure)
     {
-        var builder = new OutboxBuilder();
+        var builder = new OutboxBuilder(serviceCollection);
 
         configure(builder);
 
         serviceCollection.AddSingleton<IMessageOutbox>(provider => builder.Build(provider));
-        
+
         serviceCollection.AddHostedService<OutboxService>();
 
         return serviceCollection;
