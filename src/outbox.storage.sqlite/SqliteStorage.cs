@@ -27,7 +27,7 @@ public class SqliteStorage : IStorageProvider
         command.Parameters.AddWithValue("@key", message.Key);
         command.Parameters.AddWithValue("@keyType", message.KeyType.FullName);
         command.Parameters.AddWithValue("@message", message.Message);
-        command.Parameters.AddWithValue("@messageType", message.MessageType.FullName);
+        command.Parameters.AddWithValue("@messageType", message.MessageType.AssemblyQualifiedName);
         command.Parameters.AddWithValue("@topic", message.Topic);
 
         await command.ExecuteNonQueryAsync(cancellationToken);
@@ -50,7 +50,7 @@ public class SqliteStorage : IStorageProvider
 
         if (!await reader.ReadAsync(cancellationToken))
             return default!;
-        
+
         var result = new QueuedMessage(
             reader.GetInt32(0),
             reader.GetString(1),
@@ -64,19 +64,19 @@ public class SqliteStorage : IStorageProvider
 
         return result;
     }
-    
+
     public async Task<bool> Commit(QueuedMessage message, CancellationToken cancellationToken)
     {
         await using var connection = new SqliteConnection(_connectionString);
-		
+
         await connection.OpenAsync(cancellationToken);
-		
+
         var command = connection.CreateCommand();
-		
+
         command.CommandText = "DELETE FROM Messages WHERE Id = @id";
-		
+
         command.Parameters.AddWithValue("@id", message.Id);
-		
+
         return await command.ExecuteNonQueryAsync(cancellationToken) > 0;
     }
 

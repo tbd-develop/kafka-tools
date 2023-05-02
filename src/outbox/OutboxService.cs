@@ -1,5 +1,8 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel;
+using System.Reflection;
+using System.Text.Json;
 using Confluent.Kafka;
+using MessagingToolset.Kafka;
 using MessagingToolset.Outbox.Infrastructure.Extensions;
 using MessagingToolset.Outbox.Infrastructure.Serialization;
 using MessagingToolset.Outbox.Storage;
@@ -11,15 +14,18 @@ namespace MessagingToolset.Outbox;
 
 public class OutboxService : BackgroundService
 {
+    private readonly KafkaConfiguration _kafkaConfiguration;
     private readonly IStorageProvider _storageProvider;
     private readonly IKafkaTopicProvider _topicProvider;
     private readonly ILogger<OutboxService> _logger;
 
     public OutboxService(
+        KafkaConfiguration kafkaConfiguration,
         IStorageProvider storageProvider,
         IKafkaTopicProvider topicProvider,
         ILogger<OutboxService> logger)
     {
+        _kafkaConfiguration = kafkaConfiguration;
         _storageProvider = storageProvider;
         _topicProvider = topicProvider;
         _logger = logger;
@@ -59,19 +65,33 @@ public class OutboxService : BackgroundService
 
         var topic = await _topicProvider.GetTopicAsync(message.Topic, cancellationToken);
 
+        var keyAsType = TypeDescriptor.GetConverter(message.KeyType).ConvertFromInvariantString(message.Key);
+        var messageAsType = message.Message is not null
+            ? JsonSerializer.Deserialize(message.Message, message.MessageType)
+            : null;
+
+        if (keyAsType == null) return false;
+
         await (Task)genericMethod.Invoke(this,
-            new object[] { message.Key, message?.Message, topic, cancellationToken });
+            new object[]
+            {
+                keyAsType,
+                messageAsType,
+                topic,
+                cancellationToken
+            });
 
         return true;
     }
 
     private async Task ProduceMessageAsync<TKey, TMessage>(
-        TKey key, TMessage? message,
+        TKey key,
+        TMessage? message,
         string topic,
         CancellationToken cancellationToken)
         where TMessage : class
     {
-        using var producer = new ProducerBuilder<TKey, TMessage>(new Dictionary<string, string>() { })
+        using var producer = new ProducerBuilder<TKey, TMessage>(_kafkaConfiguration.Producers)
             .SetErrorHandler(((current, error) =>
             {
                 _logger.LogError("Unable to produce message to Kafka: ({Code}) {Error}", error.Code, error.Reason);

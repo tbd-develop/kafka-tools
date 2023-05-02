@@ -14,9 +14,11 @@
         <PackageLicenseUrl>https://github.com/tbd-develop/messaging-toolset/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/tbd-develop/messaging-toolset</RepositoryUrl>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Version>1.0.4</Version>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\kafka\kafka.csproj" />
       <ProjectReference Include="..\outbox.storage\outbox.storage.csproj" />
       <ProjectReference Include="..\topics.providers\topics.providers.csproj" />
     </ItemGroup>
