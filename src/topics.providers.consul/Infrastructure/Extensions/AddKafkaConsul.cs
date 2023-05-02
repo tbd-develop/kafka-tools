@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MessagingToolset.Topics.Providers.Consul.Infrastructure.Extensions;
 
-static class ServiceCollectionExtensions
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddKafkaConsul(this IServiceCollection services,
         Action<ConsulTopicProviderConfiguration> configure)
